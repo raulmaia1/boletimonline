@@ -204,7 +204,17 @@ public class ListaSimuladaTurmas {
 		professor.setAcesso("97798347372");
 		professor.setLogin("regileide");
 			
-	çkjlk
+		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+		setimoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+
+		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+		setimoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+		
+		professor.adicionaDisciplina_Turma(setimoAnoA);
+		professor.adicionaDisciplina_Turma(setimoAnoB);
+		
 		return professor;
 	}
 	
