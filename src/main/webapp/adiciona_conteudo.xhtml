@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<ui:insert name="header">
+		<ui:include src="WEB-INF/cabecalho.xhtml" />
+	</ui:insert>
+</h:head>
+
+<h:body>
+	<h:form id="formulario" enctype="multipart/form-data">
+		<p:growl id="msgCP" showDetail="true"   />
+		<div class="container-fluid">
+			<h:panelGrid columns="1" cellpadding="3" cellspacing="5"
+				styleClass="table table-borderless table-sm">
+				<h:outputLabel styleClass="h3 form-label"
+					value="Conteúdo Programatico" />
+				<h:outputLabel value="Data da Aula" styleClass="form-label" />
+  				<p:inputMask mask="99/99/9999" value="#{adicionaConteudoBean.conteudo.data}" styleClass="form-control" />
+  				
+				<h:outputLabel value="Conteudo" styleClass="form-label col-md-6" />
+				<h:inputTextarea value="#{adicionaConteudoBean.conteudo.conteudo}" styleClass="form-control" />
+				
+				<p:outputLabel value="Disciplina" styleClass="form-label col-md-6" />
+				<p:selectOneMenu  converter="disciplinaConverter" value="#{adicionaConteudoBean.disciplina}" styleClass="form-control">
+    				<f:selectItems value="#{adicionaConteudoBean.disciplinas}" />
+				</p:selectOneMenu >
+				
+				<p:outputLabel value="Turma" styleClass="form-label col-md-6" />
+				<p:selectOneMenu converter="turmaConverter" value="#{adicionaConteudoBean.turma}" styleClass="form-control">
+    				<f:selectItems value="#{adicionaConteudoBean.turmas}" />
+				</p:selectOneMenu >
+				
+				<p:outputLabel value="Quantidade de Aulas" styleClass="form-label col-md-6" />
+				<p:inputMask value="#{adicionaConteudoBean.conteudo.quantAulas}" styleClass="form-control" />				
+			</h:panelGrid>
+			
+			<p:commandButton styleClass="btn btn-primary mb-3" ajax="false" value="Salvar" actionListener="#{adicionaConteudoBean.salvar}" />
+					
+		</div>
+	</h:form>
+</h:body>
+
+</html>

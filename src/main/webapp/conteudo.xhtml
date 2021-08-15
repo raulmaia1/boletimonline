@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<ui:insert name="header">
+		<ui:include src="WEB-INF/cabecalho.xhtml" />
+	</ui:insert>
+</h:head>
+
+<h:body>
+	<h:form id="formulario">
+		<div class="container-fluid row">
+			<h:panelGrid columns="4" cellpadding="10" styleClass="row g-2">
+				<p:selectOneMenu placeholder="Turma" converter="turmaConverterConteudo"
+					value="#{adicionaConteudoBean.turma}" styleClass="form-control">
+					<f:selectItems value="#{adicionaConteudoBean.turmas}" />
+				</p:selectOneMenu>
+
+				<p:calendar placeholder="Data Inicio" />
+				<p:calendar placeholder="Data Final" />
+				<p:commandButton update="formulario" value="Pesquisar"
+					styleClass="btn btn-primary col" />
+
+			</h:panelGrid>
+
+			<h:dataTable id="tabela" var="c" value="#{conteudoBean.conteudos}"
+				styleClass="table table-responsive table-striped">
+				<h:column>
+					<f:facet name="header">Data</f:facet>
+					<h:outputLabel value="#{c.data}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Conteúdo Programático</f:facet>
+					<h:outputLabel  value="#{c.conteudo}"/>
+				</h:column>
+							
+				<h:column>
+					<f:facet name="header">Disciplina</f:facet>
+					<h:outputLabel value="#{c.disciplina.nomeMateria}"/>
+				</h:column>				
+				
+				<h:column>
+					<f:facet name="header">Quantidade de Aulas</f:facet>
+					<h:outputLabel  value="#{c.quantAulas}"/>
+				</h:column>	
+				
+			</h:dataTable>
+			<h:panelGrid columns="3" cellpadding="5" styleClass="row g-2">
+				<p:commandButton disabled="true" value="Imprimir"/>
+				<h:commandButton disabled="true" value="Salvar Intervalo" styleClass="btn btn-success"/>
+				
+				<h:outputLabel value="Total de Horas/Aula : #{conteudoBean.horasAulas}" styleClass="h4"/>
+			
+			</h:panelGrid>
+
+		</div>
+	</h:form>
+</h:body>
+</html>

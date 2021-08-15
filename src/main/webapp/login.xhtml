@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+</h:head>
+
+
+<h:body>
+	<h:form style="margin-top: 50px;" id="formulario"
+		enctype="multipart/form-data">
+		<p:growl id="growl" showDetail="true" />
+
+		<h:panelGrid column="1" style="margin: 0 auto;">
+
+			<p:card style="width: 27rem; margin-bottom: 1em;" styleClass="card">
+				<f:facet name="title">
+					<div class="text-center">
+						<h:graphicImage height="200px" width="200px" library="images"
+							name="semed2.jpeg" />
+					</div>
+					<h3 class="display-5">Bem Vindo</h3>
+				</f:facet>
+				<h:panelGrid columns="2"
+					styleClass="p-col-12 p-md-4 p-grid ui-fluid p-col-12 p-md-4 ">
+					<div class="ui-inputgroup">
+						<span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+						<p:inputText placeholder="Usuario" value="#{loginBean.login}" />
+					</div>
+
+					<div class="ui-inputgroup">
+						<span class="ui-inputgroup-addon"><i class="pi pi-shield"></i></span>
+
+						<p:password id="toggle" value="#{loginBean.senha}"
+							placeholder="Senha" toggleMask="true" redisplay="true"
+							styleClass="form-control" />
+
+					</div>
+				</h:panelGrid>
+				<f:facet name="footer">
+					<p:commandButton update="growl" action="#{loginBean.logar}"
+						styleClass="btn btn-primary btn-lg" value="Entrar" />
+				</f:facet>
+			</p:card>
+
+		</h:panelGrid>
+
+
+	</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<ui:insert name="header">
+		<ui:include src="WEB-INF/cabecalho.xhtml" />
+	</ui:insert>
+</h:head>
+<h:body>
+	<h:form>
+		<div class="container-fluid row">
+			<h:outputLabel style="padding-top:10px;" value="Turmas" styleClass="h4" />
+			<ui:repeat var="turma" value="#{turmaBean.professor.turmas}">
+			<div class="col-3">			
+				<div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title">#{turma.descricaoTurma}</h5>
+						<p class="card-text"></p>
+						<h:commandButton actionListener="#{turmaBean.abriTurma(turma)}" action="bimestre" styleClass="btn btn-primary" value="Adicionar Notas" />
+					</div>
+				</div>
+			</div>
+			</ui:repeat>
+		</div>
+
+
+	</h:form>
+</h:body>
+</html>

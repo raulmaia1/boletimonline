@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<ui:insert name="header">
+		<ui:include src="WEB-INF/cabecalho.xhtml" />
+	</ui:insert>
+</h:head>
+
+<h:body>
+	<h:form>
+		<div class="container-fluid">
+			<p:dataTable var="aluno" value="#{alunoBean.turma.alunos}"
+				reflow="true" styleClass="products-table">
+
+				<p:column headerText="Numero" sortBy="#{aluno.numero}">
+					<h:outputLabel value="#{aluno.numero}" />
+				</p:column>
+
+				<p:column headerText="Nome Aluno">
+					<h:outputLabel value="#{aluno.nomeAluno}" />
+				</p:column>
+				
+				<p:column headerText="Atividade">
+					<h:inputText value="#{aluno.notaAtividade.valor}" styleClass="form-control"/>
+				</p:column>
+				
+				<p:column headerText="Nota Prova">
+					<h:inputText value="#{aluno.notaProva.valor}" styleClass="form-control"/>
+				</p:column>
+				
+			</p:dataTable>
+			<h:panelGrid columns="2" cellspacing="2">
+				<p:commandButton actionListener="#{alunoBean.adicionaNota}"  style="margin-top:10px;" icon="pi pi-fw pi-save" value="Salvar" styleClass="btn btn-success" />
+<!-- 				<p:commandButton action="conteudo"  style="margin-top:10px;" icon="pi pi-fw pi-book" value="Conteúdo" styleClass="btn btn-primary" />		 -->
+			</h:panelGrid>
+		</div>
+	</h:form>
+</h:body>
+</html>

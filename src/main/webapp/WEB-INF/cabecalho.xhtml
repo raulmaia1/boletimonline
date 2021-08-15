@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+	<h:head>
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		<title>Diário Online</title>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			<p:menubar styleClass="navbar navbar-expand-lg navbar-dark bg-dark"
+				style="background: rgb(4,14,66);background: linear-gradient(180deg, rgba(4,14,66,1) 13%, rgba(24,170,97,1) 13%, rgba(5,181,94,1) 80%);">
+
+				<p:menuitem value="Diário Online" action="/index.xhtml"
+					icon="pi pi-fw pi-pencil" styleClass="a navbar-brand" />
+
+				<p:divider layout="vertical" />
+
+				<p:menuitem title="Ok" style="color:white;" value="Disciplina"
+					action="/disciplina.xhtml" icon="pi pi-fw pi-user-plus"
+					styleClass="a nav-link active" />
+
+				<p:menuitem value="Boletim" styleClass="a nav-link"
+					icon="pi pi-fw pi-user-edit" />
+
+				<p:submenu label="Conteúdo Programático" styleClass="a nav-link"
+					icon="pi pi-fw pi-book">
+					<p:menuitem value="Adicionar" icon="pi pi-fw pi-user-plus"
+						action="adiciona_conteudo.xhtml" />
+					<p:menuitem value="Visualizar" icon="pi pi-fw pi-list"
+						action="conteudo.xhtml" />
+				</p:submenu>
+				<p:menuitem disabled="true" value="#{inicioBean.professor.nome}"
+					styleClass="display-7 ui-input-icon-left ui-button-secondary p-mr-2">
+					
+				</p:menuitem>
+			</p:menubar>
+		</h:form>
+
+
+	</h:body>
+</ui:composition>
+</html>
+
+

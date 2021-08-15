@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<ui:insert name="header">
+		<ui:include src="WEB-INF/cabecalho.xhtml" />
+	</ui:insert>
+</h:head>
+
+<h:body>
+	<h:form>
+		<div class="container-fluid row">
+			<h:outputLabel style="padding-top:10px;" value="Bimestres"
+				styleClass="h4" />
+				
+<!-- 		Primeiro Bimestre -->
+			<div class="card w-75">
+				<div class="card-body">
+					<h5 class="card-title">Primeiro Bimestre</h5>
+					<p class="card-text"></p>
+					<h:commandButton actionListener="#{bimestreBean.abriPrimeiroBimestre}" action="alunos" styleClass="btn btn-primary" value="Entrar" />
+				</div>
+			</div>
+
+<!-- 		Segundo Bimestre -->
+			<div class="card w-75">
+				<div class="card-body">
+					<h5 class="card-title">Segundo Bimestre</h5>
+					<p class="card-text"></p>
+					<h:commandButton actionListener="#{bimestreBean.abriSegundoBimestre}" action="alunos" styleClass="btn btn-primary" value="Entrar" />
+				</div>
+			</div>
+
+<!-- 		Terceiro Bimestre -->
+			<div class="card w-75">
+				<div class="card-body">
+					<h5 class="card-title">Terceiro Bimestre</h5>
+					<p class="card-text"></p>
+					<h:commandButton actionListener="#{bimestreBean.abriTerceiroBimestre}" action="alunos" styleClass="btn btn-primary" value="Entrar" />
+				</div>
+			</div>
+
+<!-- 		Quarto Bimestre -->
+			<div class="card w-75">
+				<div class="card-body">
+					<h5 class="card-title">Quarto Bimestre</h5>
+					<p class="card-text"></p>
+					<h:commandButton actionListener="#{bimestreBean.abriQuartoBimestre}" action="alunos" styleClass="btn btn-primary" value="Entrar" />
+				</div>
+			</div>
+
+		</div>
+	</h:form>
+</h:body>
+</html>

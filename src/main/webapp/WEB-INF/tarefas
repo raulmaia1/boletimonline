@@ -1,0 +1,27 @@
+
+1 - Ajeita a modelagem de Disciplina - Bimestre - Turma (
+
+ Um Professor tem varias disciplinas
+ Uma Turma tem varias disciplinas
+ Uma Disciplina tem  varias Turmas
+  
+Uma Disciplina tem 4 Bimestre
+
+
+Turma
+	Lista de Disciplinas                             Portugues
+	Lista de Alunos                                  30 Alunos
+	
+Aluno
+
+Disciplina
+	1 Bimestre
+	2 Bimestre
+	3 Bimestre
+	4 Bimestre
+ 
+ Bimestre
+    notaAtividade
+    notaProva
+    falta   
+	
