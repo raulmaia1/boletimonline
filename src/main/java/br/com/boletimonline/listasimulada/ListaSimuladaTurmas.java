@@ -474,7 +474,7 @@ public class ListaSimuladaTurmas {
 		Professor professor = new Professor();
 		// Disciplinas
 		
-		professor.setNome("Profª Maria de Fátima Barbosa Santana");
+		professor.setNome("Profª Ivania Almeida da Silva ");
 		professor.setAcesso("03341093370");
 		professor.setLogin("ivania");
 		
@@ -535,6 +535,7 @@ public class ListaSimuladaTurmas {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Primeiro Ano");
+		turma.setTurno("MATUTINO");
 		turma.adicionaAluno(Arrays.asList(aluno1, aluno2, aluno3, aluno4, aluno5, aluno6, aluno7, aluno8, aluno9,
 				aluno10, aluno11, aluno12, aluno13, aluno14, aluno15, aluno16, aluno17, aluno18, aluno19, aluno20,
 				aluno21, aluno22, aluno23));
@@ -577,6 +578,7 @@ public class ListaSimuladaTurmas {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Segundo Ano");
+		turma.setTurno("MATUTINO");
 		turma.adicionaAluno(
 				Arrays.asList(aluno1, aluno2, aluno3, aluno4, aluno5, aluno6, aluno7, aluno8, aluno9, aluno10, aluno11,
 						aluno12, aluno13, aluno14, aluno15, aluno16, aluno17, aluno18, aluno19, aluno20, aluno21));
@@ -623,6 +625,7 @@ public class ListaSimuladaTurmas {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Quarto Ano");
+		turma.setTurno("MATUTINO");
 		turma.adicionaAluno(Arrays.asList(aluno1, aluno2, aluno3, aluno4, aluno5, aluno6, aluno7, aluno8, aluno9,
 				aluno10, aluno11, aluno12, aluno13, aluno14, aluno15, aluno16, aluno17, aluno18, aluno19, aluno20,
 				aluno21, aluno22, aluno23, aluno24, aluno25, aluno26, aluno27, aluno28));
@@ -849,6 +852,7 @@ public class ListaSimuladaTurmas {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Oitavo Ano A");
+		turma.setTurno("VESPERTINO");                  
 		turma.adicionaAluno(Arrays.asList(getAluno("Adriana Nascimento de Oliveira", 1),
 				getAluno("Alessandra Silva Pereira", 2), getAluno("Antonio Anderson Matos de Sousa", 3),
 				getAluno("Arioston Lima Miranda Júnior", 4), getAluno("Carliane Reis dos Santos", 5),
@@ -918,6 +922,7 @@ public class ListaSimuladaTurmas {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Oitavo Ano B");
+		turma.setTurno("VESPERTINO"); 
 		turma.adicionaAluno(Arrays.asList(aluno1, aluno2, aluno3, aluno4, aluno5, aluno6, aluno7, aluno8, aluno9,
 				aluno10, aluno11, aluno12, aluno13, aluno14, aluno15, aluno16, aluno17, aluno18, aluno19, aluno20,
 				aluno21, aluno22, aluno23, aluno24, aluno25, aluno26, aluno27, aluno28, aluno29, aluno30, aluno31,
@@ -976,6 +981,7 @@ public class ListaSimuladaTurmas {
 	private static Turma getTurmaNonoAnoB() {
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Nono Ano B");
+		turma.setTurno("VESPERTINO"); 
 		turma.adicionaAluno(
 				Arrays.asList(getAluno("Amanda do Nascimento Serras  ", 1)
 						,getAluno("Brenno Abreu de Sousa", 2)
