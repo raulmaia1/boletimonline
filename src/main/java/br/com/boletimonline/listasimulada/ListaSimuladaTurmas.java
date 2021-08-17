@@ -219,7 +219,6 @@ public class ListaSimuladaTurmas {
 		return professor;
 	}
 	
-	 
 	public static Professor getProfessoraSuelySantosMoreiradeOliveira () {
 		Professor professor = new Professor();
 		// Disciplinas
@@ -395,10 +394,7 @@ public class ListaSimuladaTurmas {
 		
 		return professor;
 	}
-	
-	   
-	  
-	 
+		 
 	public static Professor getProfessoraJoseaneNevesFreire() {
 		Professor professor = new Professor();
 		// Disciplinas
@@ -472,6 +468,41 @@ public class ListaSimuladaTurmas {
 		professor.adicionaDisciplina_Turma(sextoAnoB);	
 		
 		return professor;
+	}
+	
+	public static Professor getProfessoraIvaniaAlmeidaDaSilva() {
+		Professor professor = new Professor();
+		// Disciplinas
+		
+		professor.setNome("Profª Maria de Fátima Barbosa Santana");
+		professor.setAcesso("03341093370");
+		professor.setLogin("ivania");
+		
+		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+
+		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+
+		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+		nonoAnoA.setTurma(getTurmaNonoAnoA());
+		nonoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+		
+		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+		nonoAnoB.setTurma(getTurmaNonoAnoB());
+		nonoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+		
+
+		professor.adicionaDisciplina_Turma(oitavoAnoA);
+		professor.adicionaDisciplina_Turma(oitavoAnoB);
+		professor.adicionaDisciplina_Turma(nonoAnoA);
+		professor.adicionaDisciplina_Turma(nonoAnoB);
+		
+		
+		return professor;
+		
 	}
 	
 	/*
