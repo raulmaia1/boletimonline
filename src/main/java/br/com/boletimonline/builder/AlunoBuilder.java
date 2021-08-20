@@ -6,7 +6,7 @@ import br.com.boletimonline.model.Escola;
 public class AlunoBuilder {
 	
 	private Aluno aluno = new Aluno();
-	private static Escola escola = new Escola().setNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA");
+	public static Escola escola;
 	
 	public AlunoBuilder addNomeAluno(String nomeAluno) {
 		aluno.setNomeAluno(nomeAluno);

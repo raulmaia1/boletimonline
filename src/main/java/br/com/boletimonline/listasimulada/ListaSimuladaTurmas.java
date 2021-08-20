@@ -24,7 +24,11 @@ public class ListaSimuladaTurmas {
 	private static Disciplina filosofia = new DisciplinaBuilder().addNomeMateria("Filosofia").builder();
 	private static Disciplina informatica = new DisciplinaBuilder().addNomeMateria("Informática").builder();
 	private static Disciplina ensino_religioso = new DisciplinaBuilder().addNomeMateria("Ensino Religioso").builder();
-	private Escola escolaJorge = new EscolaBuilder().addEndereco("PRAÇA CAPITÃO JOSÉ ANTONIO, 03  - TRIZIDELA - BACABAL – MARANHÃO").addInep("21278911").addNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA").build();
+	private static Escola escolaJorge = new EscolaBuilder().addEndereco("PRAÇA CAPITÃO JOSÉ ANTONIO, 03  - TRIZIDELA - BACABAL – MARANHÃO").addInep("21278911").addNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA").build();
+	
+	ListaSimuladaTurmas() {
+		AlunoBuilder.escola = escolaJorge;
+	}
 	
 	public static Professor getProfessoraFernanda() {
 
@@ -32,6 +36,7 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Fernanda Carolina Ferreira Mendonça");
 		professor.setAcesso("06094427327");
 		professor.setLogin("fernanda");
+		professor.setEscola(escolaJorge);
 		
 		DisciplinaTurma disciplina_turma = new DisciplinaTurma();
 		
@@ -56,6 +61,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Lidiane Almeida da Silva ");
 		professor.setAcesso("86122592315");
 		professor.setLogin("lidiane");
+		professor.setEscola(escolaJorge);
+
 		
 		DisciplinaTurma disciplina_turma = new DisciplinaTurma();
 		
@@ -74,7 +81,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Francisca da Silva ");
 		professor.setAcesso("01371229341");
 		professor.setLogin("francisca");
-		
+		professor.setEscola(escolaJorge);
+
 		
 		DisciplinaTurma disciplina_turma = new DisciplinaTurma();
 		
@@ -92,7 +100,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Ana Carolina Souza de Morais ");
 		professor.setAcesso("1234");
 		professor.setLogin("carolina");
-		
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma disciplina_turma = new DisciplinaTurma();
 		
 		disciplina_turma.setTurma(getTurmaQuinto());
@@ -110,7 +119,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Ana Carolina Souza de Morais ");
 		professor.setAcesso("00634334352");
 		professor.setLogin("paula");
-		
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
 		sextoAnoA.setTurma(getTurmaSextoAnoA());
 		sextoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
@@ -163,6 +173,7 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Prof Franklin Douglas de Sousa Silva  ");
 		professor.setAcesso("53052560387");
 		professor.setLogin("franklin");
+		professor.setEscola(escolaJorge);
 
 		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
 		setimoAnoA.setTurma(getTurmaSetimoAnoA());
@@ -206,7 +217,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Regileide Alves da Silva");
 		professor.setAcesso("97798347372");
 		professor.setLogin("regileide");
-			
+		professor.setEscola(escolaJorge);
+	
 		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
 		setimoAnoA.setTurma(getTurmaSetimoAnoA());
 		setimoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
@@ -227,7 +239,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Suely Santos Moreira de Oliveira");
 		professor.setAcesso("43224148349");
 		professor.setLogin("suely");
-		
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
 		setimoAnoA.setTurma(getTurmaSetimoAnoA());
 		setimoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
@@ -268,7 +281,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Prof José Werbete da Conceição Pereira");
 		professor.setAcesso("01087919398");
 		professor.setLogin("jose");
-	
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
 		setimoAnoA.setTurma(getTurmaSetimoAnoA());
 		setimoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
@@ -310,7 +324,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Prof Welyson");
 		professor.setAcesso("56990405368");
 		professor.setLogin("welyson");
-		
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
 		setimoAnoA.setTurma(getTurmaSetimoAnoA());
 		setimoAnoA.getDisciplinas().addAll(Arrays.asList(geografia));
@@ -352,7 +367,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Sayonara Barbosa Carvalho dos Santos");
 		professor.setAcesso("05506159382");
 		professor.setLogin("sayonara");
-	
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
 		sextoAnoA.setTurma(getTurmaSextoAnoA());
 		sextoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
@@ -404,6 +420,7 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Joseane Neves Freire");
 		professor.setAcesso("46766944315");
 		professor.setLogin("joseane");
+		professor.setEscola(escolaJorge);
 
 		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
 		sextoAnoA.setTurma(getTurmaSextoAnoA());
@@ -457,7 +474,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Maria de Fátima Barbosa Santana");
 		professor.setAcesso("40866467300");
 		professor.setLogin("maria");
-	
+		professor.setEscola(escolaJorge);
+
 		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
 		sextoAnoA.setTurma(getTurmaSextoAnoA());
 		sextoAnoA.getDisciplinas().addAll(Arrays.asList(ciencias));
@@ -479,7 +497,8 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Ivania Almeida da Silva ");
 		professor.setAcesso("03341093370");
 		professor.setLogin("ivania");
-		
+		professor.setEscola(escolaJorge);
+	
 		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
 		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
 		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
