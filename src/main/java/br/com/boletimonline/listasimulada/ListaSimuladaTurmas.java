@@ -50,7 +50,7 @@ public class ListaSimuladaTurmas {
 
 	}
 
-	public static Professor getLidianeAlmeidadaSilva() {
+	public static Professor getProfessoraLidianeAlmeidadaSilva() {
 
 		Professor professor = new Professor();
 		// Disciplinas
