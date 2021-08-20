@@ -16,7 +16,23 @@ public class Escola {
 	private Long id;
 	
 	@Column(nullable = true)
-	private String nomeEscola;
+	private String nomeEscola,inep,endereco;
+	
+	public void setInep(String inep) {
+		this.inep = inep;
+	}
+	
+	public String getInep() {
+		return inep;
+	}
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
+	public String getEndereco() {
+		return endereco;
+	}
 	
 	public Escola setNomeEscola(String nomeEscola) {
 		this.nomeEscola = nomeEscola;

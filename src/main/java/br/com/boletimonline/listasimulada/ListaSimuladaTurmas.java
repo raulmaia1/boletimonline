@@ -4,9 +4,11 @@ import java.util.Arrays;
 
 import br.com.boletimonline.builder.AlunoBuilder;
 import br.com.boletimonline.builder.DisciplinaBuilder;
+import br.com.boletimonline.builder.EscolaBuilder;
 import br.com.boletimonline.model.Aluno;
 import br.com.boletimonline.model.Disciplina;
 import br.com.boletimonline.model.DisciplinaTurma;
+import br.com.boletimonline.model.Escola;
 import br.com.boletimonline.model.Turma;
 import br.com.boletimonline.model.usuario.Professor;
 
@@ -22,7 +24,7 @@ public class ListaSimuladaTurmas {
 	private static Disciplina filosofia = new DisciplinaBuilder().addNomeMateria("Filosofia").builder();
 	private static Disciplina informatica = new DisciplinaBuilder().addNomeMateria("Informática").builder();
 	private static Disciplina ensino_religioso = new DisciplinaBuilder().addNomeMateria("Ensino Religioso").builder();
-	
+	private Escola escolaJorge = new EscolaBuilder().addEndereco("PRAÇA CAPITÃO JOSÉ ANTONIO, 03  - TRIZIDELA - BACABAL – MARANHÃO").addInep("21278911").addNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA").build();
 	
 	public static Professor getProfessoraFernanda() {
 
@@ -1017,6 +1019,7 @@ public class ListaSimuladaTurmas {
 		return new AlunoBuilder().addNomeAluno(nome).addNumero(numero).builder();
 	}
 }
+
 
 //public static Professor getProfessoraIvaniaAlmeidaDaSilva() {
 //
