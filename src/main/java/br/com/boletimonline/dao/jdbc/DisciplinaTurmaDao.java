@@ -19,7 +19,7 @@ public class DisciplinaTurmaDao {
 			try {
 				PreparedStatement preparedStatement = ConexaoBancoFactory.getConexao().get().prepareStatement(SQL);
 
-				preparedStatement.setString(1, );
+				preparedStatement.setString(1, disciplinaTurma.getProfessor().g);
 				preparedStatement.setBigDecimal(2, new BigDecimal(799.88));
 
 				return preparedStatement.executeUpdate();

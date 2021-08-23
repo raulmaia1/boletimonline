@@ -1,30 +1,26 @@
 package br.com.boletimonline.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "aluno")
 public class Aluno {
 		
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
 	private Escola escola;
 	
-	@Column(nullable = false)
 	private String nomeAluno,dataNasc ="";
-	@Column(nullable = false)
+	
 	private Integer numero = 0;
 	
+	private Turma turma;
+	
+	/// Getters and Setters
+	
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+	
+	public Turma getTurma() {
+		return turma;
+	}
 			
 	public void setEscola(Escola escola) {
 		this.escola = escola;

@@ -1,29 +1,13 @@
 package br.com.boletimonline.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "turma")
 public class Turma {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@Column(nullable = false)
+	
 	private String descricaoTurma ="",turno="",ano ="2021";	
 	
-	@OneToMany(targetEntity = Aluno.class,cascade=CascadeType.ALL)
-	private List<Aluno> alunos = new ArrayList<>();
+	private Escola escola;
+
 	
 	public void setDescricaoTurma(String descricaoTurma) {
 		this.descricaoTurma = descricaoTurma;
@@ -32,19 +16,7 @@ public class Turma {
 	public String getDescricaoTurma() {
 		return descricaoTurma;
 	}
-	
-	public void adicionaAluno(List<Aluno> alunos) {
-		this.alunos.addAll(alunos);
-	}
-	
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-
-	public String getQuantAlunos() {
-		return String.valueOf(alunos.size());
-	}
-	
+			
 	@Override
 	public String toString() {
 		return descricaoTurma;
