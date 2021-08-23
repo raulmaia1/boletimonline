@@ -8,11 +8,18 @@ public class Turma {
 	
 	private Escola escola;
 
-	
 	public void setDescricaoTurma(String descricaoTurma) {
 		this.descricaoTurma = descricaoTurma;
 	}
-			
+	
+	public String getAno() {
+		return ano;
+	}
+	
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+	
 	public String getDescricaoTurma() {
 		return descricaoTurma;
 	}

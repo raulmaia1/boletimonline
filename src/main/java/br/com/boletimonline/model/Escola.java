@@ -1,21 +1,9 @@
 package br.com.boletimonline.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "escola")
 public class Escola {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = true)
 	private String nomeEscola,inep,endereco;
 	
 	public void setInep(String inep) {

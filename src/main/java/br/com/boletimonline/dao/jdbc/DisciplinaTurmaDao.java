@@ -17,7 +17,7 @@ public class DisciplinaTurmaDao {
 
 		if (ConexaoBancoFactory.getConexao().isPresent()) {
 			try {
-				PreparedStatement preparedStatement = ConexaoBancoFactory.getConexao().get().prepareStatement(SQL);
+				PreparedStatement preparedStatement = ConexaoBancoFactory.getConexao().get().prepareStatement(SQLDISCIPLINATURMA);
 
 				preparedStatement.setString(1, disciplinaTurma.getProfessor().g);
 				preparedStatement.setBigDecimal(2, new BigDecimal(799.88));
