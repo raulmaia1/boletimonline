@@ -7,7 +7,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="Dali", date="2021-08-19T22:04:14.614-0300")
+@Generated(value="Dali", date="2021-08-21T22:29:33.079-0300")
 @StaticMetamodel(Professor.class)
 public class Professor_ extends Usuario_ {
 	public static volatile ListAttribute<Professor, DisciplinaTurma> disciplinas_turma;

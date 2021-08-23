@@ -24,6 +24,7 @@ public class Aluno {
 	private String nomeAluno,dataNasc ="";
 	@Column(nullable = false)
 	private Integer numero = 0;
+	
 			
 	public void setEscola(Escola escola) {
 		this.escola = escola;

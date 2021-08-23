@@ -17,7 +17,7 @@ import br.com.boletimonline.model.Escola;
 @Table(name = "professor")
 public class Professor extends Usuario {
 	
-	@OneToMany(targetEntity = DisciplinaTurma.class, cascade = CascadeType.ALL)	
+	@OneToMany(targetEntity=DisciplinaTurma.class, cascade = CascadeType.ALL)
 	private List<DisciplinaTurma> disciplinas_turma = new ArrayList<>();
 	
 	@OneToOne(cascade = CascadeType.ALL, optional = true)
@@ -93,5 +93,8 @@ public class Professor extends Usuario {
 		return escola;
 	}
 	
+	public List<DisciplinaTurma> getDisciplinasTurmas() {
+		return disciplinas_turma;
+	}
 	
 }

@@ -22,9 +22,10 @@ public class Bimestre {
 	
 	@OneToOne(targetEntity = Nota.class, cascade = CascadeType.ALL, optional = true)
 	private Nota notaAtividade, notaProva;
-	private String quantFaltas;
+	@Column(nullable = false)
+	private String quantFaltas = "0";
 	
-	@Column
+	@OneToOne(cascade = CascadeType.ALL, optional = true)
 	private Aluno aluno;
 	
 	public Integer getNumeroBimestre() {

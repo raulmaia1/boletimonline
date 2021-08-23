@@ -43,7 +43,7 @@ public class ListaSimuladaTurmas {
 		disciplina_turma.setTurma(getTurmaPrimeiroAno());
 		disciplina_turma.getDisciplinas().addAll(Arrays.asList(portugues, matematica,ciencias,historia,geografia,artes,ingles,filosofia,informatica));
 			
-		professor.adicionaDisciplina_Turma(disciplina_turma );
+		professor.adicionaDisciplina_Turma(disciplina_turma);
 		
 
 		return professor;
