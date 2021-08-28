@@ -10,7 +10,7 @@ public class TurmaDao {
 	
 	private static final String INSERT_TURMA = "INSERT INTO turma (descricao_turma, turno,ano) VALUES (?,?,?)";
 	
-	public int adicionaTurma(Turma turma) {
+	public Integer adicionaTurma(Turma turma) {
 		
 		if (ConexaoBancoFactory.getConexao().isPresent()) {
 			try {
@@ -20,13 +20,16 @@ public class TurmaDao {
 				preparedStatement.setString(2, turma.getTurno());
 				preparedStatement.setInt(3, Integer.valueOf(turma.getAno()));
 				preparedStatement.setInt(4, 1);
-
-				return preparedStatement.executeUpdate();
+				
+				Integer id = preparedStatement.executeUpdate();
+				
+				turma.setId(id);
+				
+				return id;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}		
-		
 	}
-		return 0;
+	throw new RuntimeException("Erro ao tentar abrir banco");	
 	}
 }

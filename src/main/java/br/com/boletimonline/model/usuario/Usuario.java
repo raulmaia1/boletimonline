@@ -1,21 +1,9 @@
 package br.com.boletimonline.model.usuario;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.MappedSuperclass;
-
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@MappedSuperclass
 public abstract class Usuario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@Column(nullable = false)
+
+	private Integer id;
+
 	private String nome, login, acesso;
 	
 	public void setNome(String nome) {
@@ -85,11 +73,11 @@ public abstract class Usuario {
 		return true;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

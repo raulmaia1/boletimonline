@@ -2,12 +2,24 @@ package br.com.boletimonline.model;
 
 public class Turma {
 	
-	private Long id;
+	private Integer id;
 	
 	private String descricaoTurma ="",turno="",ano ="2021";	
 	
 	private Escola escola;
-
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public void setEscola(Escola escola) {
+		this.escola = escola;
+	}
+	
+	public Escola getEscola() {
+		return escola;
+	}
+	
 	public void setDescricaoTurma(String descricaoTurma) {
 		this.descricaoTurma = descricaoTurma;
 	}
@@ -74,6 +86,8 @@ public class Turma {
 		return true;
 	}
 	
-	
+	public Integer getId() {
+		return id;
+	}
 }
 

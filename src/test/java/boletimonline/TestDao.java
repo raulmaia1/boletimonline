@@ -1,17 +1,19 @@
 package boletimonline;
 
-import javax.persistence.EntityManager;
-
-import br.com.boletimonline.factory.EntidadeFactory;
+import br.com.boletimonline.dao.jdbc.ProfessorDao;
+import br.com.boletimonline.listasimulada.ListaSimuladaTurmas;
+import br.com.boletimonline.model.usuario.Professor;
 
 public class TestDao {
 	
 	 public static void main(String[] args) {
 				 
-		 EntityManager entityManager = EntidadeFactory.loadTableAluno();
+		 Professor professoraFernanda = ListaSimuladaTurmas.getProfessoraFernanda();
 		 
-//		 entityManager.getTransaction().begin();
-//		 entityManager.persist(ListaSimuladaTurmas.getProfessoraFernanda());
+		 new ProfessorDao().adiciona(professoraFernanda);
+		 
+		 new 
+		 
 //		 entityManager.persist(ListaSimuladaTurmas.getProfessoraLidianeAlmeidadaSilva());
 //		 entityManager.persist(ListaSimuladaTurmas.getProfessoraFranciscaDaSilva());
 //		 entityManager.persist(ListaSimuladaTurmas.getProfessoraAnaCarolinaSouzaDeMorais());

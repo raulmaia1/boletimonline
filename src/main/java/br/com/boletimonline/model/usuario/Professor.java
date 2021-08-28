@@ -3,25 +3,12 @@ package br.com.boletimonline.model.usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import br.com.boletimonline.model.Disciplina;
 import br.com.boletimonline.model.DisciplinaTurma;
-import br.com.boletimonline.model.Escola;
 
-@Entity
-@Table(name = "professor")
 public class Professor extends Usuario {
 	
-	@OneToMany(targetEntity=DisciplinaTurma.class, cascade = CascadeType.ALL)
 	private List<DisciplinaTurma> disciplinas_turma = new ArrayList<>();
-	
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
-	private Escola escola;  
 	
 	public void adicionaDisciplina_Turma(DisciplinaTurma disciplina_turma) {
 		 this.disciplinas_turma.add(disciplina_turma);
@@ -83,14 +70,6 @@ public class Professor extends Usuario {
 		} else if (!super.getNome().equals(other.getNome()))
 			return false;
 		return true;
-	}
-
-	public void setEscola(Escola escola) {
-		this.escola = escola;
-	}
-	
-	public Escola getEscola() {
-		return escola;
 	}
 	
 	public List<DisciplinaTurma> getDisciplinasTurmas() {
