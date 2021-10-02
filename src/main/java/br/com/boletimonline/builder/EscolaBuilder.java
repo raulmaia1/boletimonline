@@ -23,4 +23,11 @@ public class EscolaBuilder {
 	public Escola build() {
 		return escola;
 	}
+
+	public EscolaBuilder addID(int id) {
+		
+		escola.setId(id);
+		
+		return this;
+	}
 }

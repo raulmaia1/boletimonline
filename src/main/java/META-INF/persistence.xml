@@ -8,17 +8,6 @@
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<class>br.com.boletimonline.model.Aluno</class>
-		<class>br.com.boletimonline.model.AlunoBoletim</class>
-		<class>br.com.boletimonline.model.Bimestre</class>
-		<class>br.com.boletimonline.model.ConteudoProgramatico</class>
-		<class>br.com.boletimonline.model.Disciplina</class>
-		<class>br.com.boletimonline.model.Nota</class>
-		<class>br.com.boletimonline.model.Turma</class>
-		<class>br.com.boletimonline.model.Escola</class>
-		<class>br.com.boletimonline.model.usuario.Professor</class>
-		<class>br.com.boletimonline.model.usuario.Usuario</class>
-		<class>br.com.boletimonline.model.DisciplinaTurma</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/diario_online" />

@@ -1,12 +1,14 @@
 package br.com.boletimonline.view.login;
 
+import java.util.Optional;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import br.com.boletimonline.listasimulada.ListaSimuladaUsuarios;
-import br.com.boletimonline.model.usuario.Usuario;
+import br.com.boletimonline.dao.jdbc.ProfessorDao;
+import br.com.boletimonline.model.usuario.Professor;
 
 @ManagedBean
 @SessionScoped
@@ -16,17 +18,18 @@ public class LoginBean  {
 	
 	public String logar() {
 		
-		for (Usuario usuario : ListaSimuladaUsuarios.getUsuarios()) {
-			if (usuario.getLogin().equals(login) && (usuario.getAcesso().equals(senha))) {
-				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
-				
-				return "index.xhtml";
-			}
-		}
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Diário Online","Usuário ou senha incorretos"));
-
-		return "";
+		Optional<Professor> optional = new ProfessorDao().loginProfessor(login, senha);
 		
+		if (optional.isPresent()){
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", optional.get());
+			return "index.xhtml";		
+				
+			}else {
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Diário Online","Usuário ou senha incorretos"));
+				return "";
+				
+			}
+				
 	}
 	
 	public void setSenha(String senha) {

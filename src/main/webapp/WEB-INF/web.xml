@@ -14,14 +14,14 @@
     <param-name>primefaces.THEME</param-name>
     <param-value>nova-light</param-value>
   </context-param>
-  <filter>
-    <filter-name>LoginFilter</filter-name>
-    <filter-class>br.com.boletimonline.filter.LoginFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>LoginFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+<!--   <filter> -->
+<!--     <filter-name>LoginFilter</filter-name> -->
+<!--     <filter-class>br.com.boletimonline.filter.LoginFilter</filter-class> -->
+<!--   </filter> -->
+<!--   <filter-mapping> -->
+<!--     <filter-name>LoginFilter</filter-name> -->
+<!--     <url-pattern>/*</url-pattern> -->
+<!--   </filter-mapping> -->
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -29,6 +29,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
 </web-app>

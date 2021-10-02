@@ -3,10 +3,6 @@ package br.com.boletimonline.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
 import br.com.boletimonline.model.usuario.Professor;
 
 

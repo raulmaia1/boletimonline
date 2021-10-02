@@ -1,5 +1,7 @@
 package boletimonline;
 
+import br.com.boletimonline.dao.jdbc.AlunoDao;
+import br.com.boletimonline.dao.jdbc.DisciplinaTurmaProfessorDao;
 import br.com.boletimonline.dao.jdbc.ProfessorDao;
 import br.com.boletimonline.listasimulada.ListaSimuladaTurmas;
 import br.com.boletimonline.model.usuario.Professor;
@@ -8,11 +10,17 @@ public class TestDao {
 	
 	 public static void main(String[] args) {
 				 
-		 Professor professoraFernanda = ListaSimuladaTurmas.getProfessoraFernanda();
+//		 Professor professora = ListaSimuladaTurmas.getProfessoraIvaniaAlmeidaDaSilva();
+//		 
+//		 new ProfessorDao().adiciona(professora);
+//		 
+//		 new DisciplinaTurmaProfessorDao().adiciona(professora);
+//		  cadastrar os alunos
+	
+		 new AlunoDao().adicionaAlunos(ListaSimuladaTurmas.getAlunosSetimoAnoA());
 		 
-		 new ProfessorDao().adiciona(professoraFernanda);
 		 
-		 new 
+//		 System.out.println(new TurmaDao().pesquisaTurma(ListaSimuladaTurmas.getTurmaNonoAnoA()));
 		 
 //		 entityManager.persist(ListaSimuladaTurmas.getProfessoraLidianeAlmeidadaSilva());
 //		 entityManager.persist(ListaSimuladaTurmas.getProfessoraFranciscaDaSilva());

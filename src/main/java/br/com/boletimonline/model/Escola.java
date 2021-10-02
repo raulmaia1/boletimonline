@@ -2,7 +2,7 @@ package br.com.boletimonline.model;
 
 public class Escola {
 
-	private Long id;
+	private Integer id;
 	
 	private String nomeEscola,inep,endereco;
 	
@@ -31,11 +31,11 @@ public class Escola {
 		return nomeEscola;
 	}
 	
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 

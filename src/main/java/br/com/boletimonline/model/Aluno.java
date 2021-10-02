@@ -90,5 +90,7 @@ public class Aluno {
 		return true;
 	}
 	
-	
+	public Escola getEscola() {
+		return escola;
+	}
 }

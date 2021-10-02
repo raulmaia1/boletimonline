@@ -62,9 +62,9 @@ public class AdicionaConteudoBean implements Serializable {
 		return disciplina;
 	}
 	
-	public List<Turma> getTurmas() {
-		return professor.getTurmas();
-	}
+//	public List<Turma> getTurmas() {
+//		return professor.getTurmas();
+//	}
 	
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
