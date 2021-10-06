@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import br.com.boletimonline.factory.ConexaoBancoFactory;
 import br.com.boletimonline.model.Turma;
@@ -135,6 +136,38 @@ public class TurmaDao {
 		return turmas;
 	}
 
+	public Optional<Turma> pesquisaPorID(Integer idTurma) {
+			Optional<Turma> optional = Optional.empty();
+			try {
+				PreparedStatement stmt = ConexaoBancoFactory.getConexao().get()
+						.prepareStatement(SQL_BUSCAR_TURMA_POR_ID);
+
+				stmt.setInt(1, idTurma);
+				
+				ResultSet rs = stmt.executeQuery();
+				
+				if(rs.next()) {
+					Turma turma = new Turma();
+					turma.setId(rs.getInt("id"));
+					turma.setDescricaoTurma(rs.getString("descricao_turma"));
+					turma.setTurno(rs.getString("turno"));
+					turma.setAno(rs.getString("ano"));					
+					optional = Optional.ofNullable(turma);
+				}
+					
+				rs.close();
+				stmt.close();
+				
+				return optional;
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return optional;
+		}
+	
+	
 	public static void main(String[] args) {
 
 		new ProfessorDao().loginProfessor("franklin", "53052560387").ifPresent(prof -> {

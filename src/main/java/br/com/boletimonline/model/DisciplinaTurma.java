@@ -8,6 +8,12 @@ import br.com.boletimonline.model.usuario.Professor;
 
 public class DisciplinaTurma {
 	
+	@Override
+	public String toString() {
+		return "DisciplinaTurma [id=" + id + ", turma=" + turma + ", disciplinas=" + disciplinas + ", professor="
+				+ professor + "]";
+	}
+
 	private Long id;
 	
 	private Turma turma;

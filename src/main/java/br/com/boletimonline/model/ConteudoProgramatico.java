@@ -1,28 +1,15 @@
 package br.com.boletimonline.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import br.com.boletimonline.model.usuario.Professor;
 
-@Entity
-@Table(name = "conteudo_programatico")
 public class ConteudoProgramatico {
+
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	@Column(nullable = false)
+	private Integer id;
 	private String data,conteudo,quantAulas;
-	@OneToOne(targetEntity = ConteudoProgramatico.class,cascade = CascadeType.ALL, optional = true)
 	private Disciplina disciplina;
-	
-	@OneToOne(targetEntity = Turma.class, cascade = CascadeType.ALL, optional = true)
 	private Turma turma;
+	private Professor professor;
 	
 	public String getQuantAulas() {
 		return quantAulas;
@@ -57,11 +44,11 @@ public class ConteudoProgramatico {
 		this.turma = turma;
 	}
 	
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -95,6 +82,13 @@ public class ConteudoProgramatico {
 			return false;
 		return true;
 	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
 	
+	public Professor getProfessor() {
+		return professor;
+	}
 	
 }

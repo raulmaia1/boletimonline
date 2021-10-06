@@ -77,10 +77,9 @@ public class ProfessorDao {
 
 	}
 	
-	public static void main(String[] args) {
-		
-		new ProfessorDao().loginProfessor("ivania", "03341093370").ifPresent(System.out::println);
-		
-		
+	public Optional<Professor> pesquisaPorID(Integer id) {
+
+		return null;
 	}
+	
 }

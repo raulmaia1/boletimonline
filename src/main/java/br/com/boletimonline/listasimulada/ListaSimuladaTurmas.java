@@ -113,53 +113,53 @@ public class ListaSimuladaTurmas {
 	
 	public static Professor getProfessoraAnaPaulaBarbosaDeJesus() {
 		Professor professor = new Professor();
-
+		professor.setId(5);
 		professor.setNome("Profª Ana Paula Barbosa de Jesus");
 		professor.setAcesso("00634334352");
 		professor.setLogin("paula");
 		professor.setEscola(escolaJorge);
-
-		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
-		sextoAnoA.setTurma(getTurmaSextoAnoA());
-		sextoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-
-		DisciplinaTurma sextoAnoB = new DisciplinaTurma();
-		sextoAnoB.setTurma(getTurmaSextoAnoB());
-		sextoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-		
-		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
-		setimoAnoA.setTurma(getTurmaSetimoAnoA());
-		setimoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-
-		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
-		setimoAnoB.setTurma(getTurmaSetimoAnoB());
-		setimoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-
-		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
-		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
-		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-
-		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
-		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
-		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
-
-		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
-		nonoAnoA.setTurma(getTurmaNonoAnoA());
-		nonoAnoA.getDisciplinas().addAll(Arrays.asList(informatica));
-		
-		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
-		nonoAnoB.setTurma(getTurmaNonoAnoB());
-		nonoAnoB.getDisciplinas().addAll(Arrays.asList(informatica));
-		
-		
-		professor.adicionaDisciplina_Turma(sextoAnoA);
-		professor.adicionaDisciplina_Turma(sextoAnoB);
-		professor.adicionaDisciplina_Turma(setimoAnoA);
-		professor.adicionaDisciplina_Turma(setimoAnoB);
-		professor.adicionaDisciplina_Turma(oitavoAnoA);
-		professor.adicionaDisciplina_Turma(oitavoAnoB);
-		professor.adicionaDisciplina_Turma(nonoAnoA);
-		professor.adicionaDisciplina_Turma(nonoAnoB);
+//
+//		DisciplinaTurma sextoAnoA = new DisciplinaTurma();
+//		sextoAnoA.setTurma(getTurmaSextoAnoA());
+//		sextoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//
+//		DisciplinaTurma sextoAnoB = new DisciplinaTurma();
+//		sextoAnoB.setTurma(getTurmaSextoAnoB());
+//		sextoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//		
+//		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+//		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+//		setimoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//
+//		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+//		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+//		setimoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//
+//		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+//		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+//		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//
+//		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+//		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+//		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(ingles,informatica));
+//
+//		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+//		nonoAnoA.setTurma(getTurmaNonoAnoA());
+//		nonoAnoA.getDisciplinas().addAll(Arrays.asList(informatica));
+//		
+//		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+//		nonoAnoB.setTurma(getTurmaNonoAnoB());
+//		nonoAnoB.getDisciplinas().addAll(Arrays.asList(informatica));
+//		
+//		
+//		professor.adicionaDisciplina_Turma(sextoAnoA);
+//		professor.adicionaDisciplina_Turma(sextoAnoB);
+//		professor.adicionaDisciplina_Turma(setimoAnoA);
+//		professor.adicionaDisciplina_Turma(setimoAnoB);
+//		professor.adicionaDisciplina_Turma(oitavoAnoA);
+//		professor.adicionaDisciplina_Turma(oitavoAnoB);
+//		professor.adicionaDisciplina_Turma(nonoAnoA);
+//		professor.adicionaDisciplina_Turma(nonoAnoB);
 		
 		return professor;
 	}
@@ -167,43 +167,43 @@ public class ListaSimuladaTurmas {
 	public static Professor getProfessorFranklinDouglasDeSousaSilva() {
 		Professor professor = new Professor();
 		// Disciplinas
-
+		professor.setId(6);
 		professor.setNome("Prof Franklin Douglas de Sousa Silva  ");
 		professor.setAcesso("53052560387");
 		professor.setLogin("franklin");
 		professor.setEscola(escolaJorge);
 
-		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
-		setimoAnoA.setTurma(getTurmaSetimoAnoA());
-		setimoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
-
-		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
-		setimoAnoB.setTurma(getTurmaSetimoAnoB());
-		setimoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
-
-		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
-		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
-		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
-
-		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
-		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
-		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
-
-		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
-		nonoAnoA.setTurma(getTurmaNonoAnoA());
-		nonoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
-		
-		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
-		nonoAnoB.setTurma(getTurmaNonoAnoB());
-		nonoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
-		
-		professor.adicionaDisciplina_Turma(setimoAnoA);
-		professor.adicionaDisciplina_Turma(setimoAnoB);
-		professor.adicionaDisciplina_Turma(oitavoAnoA);
-		professor.adicionaDisciplina_Turma(oitavoAnoB);
-		professor.adicionaDisciplina_Turma(nonoAnoA);
-		professor.adicionaDisciplina_Turma(nonoAnoB);
-			
+//		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+//		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+//		setimoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
+//
+//		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+//		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+//		setimoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
+//
+//		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+//		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+//		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
+//
+//		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+//		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+//		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
+//
+//		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+//		nonoAnoA.setTurma(getTurmaNonoAnoA());
+//		nonoAnoA.getDisciplinas().addAll(Arrays.asList(matematica));
+//		
+//		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+//		nonoAnoB.setTurma(getTurmaNonoAnoB());
+//		nonoAnoB.getDisciplinas().addAll(Arrays.asList(matematica));
+//		
+//		professor.adicionaDisciplina_Turma(setimoAnoA);
+//		professor.adicionaDisciplina_Turma(setimoAnoB);
+//		professor.adicionaDisciplina_Turma(oitavoAnoA);
+//		professor.adicionaDisciplina_Turma(oitavoAnoB);
+//		professor.adicionaDisciplina_Turma(nonoAnoA);
+//		professor.adicionaDisciplina_Turma(nonoAnoB);
+//			
 		
 		return professor;
 	}
@@ -217,16 +217,16 @@ public class ListaSimuladaTurmas {
 		professor.setLogin("regileide");
 		professor.setEscola(escolaJorge);
 	
-		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
-		setimoAnoA.setTurma(getTurmaSetimoAnoA());
-		setimoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
-
-		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
-		setimoAnoB.setTurma(getTurmaSetimoAnoB());
-		setimoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
-		
-		professor.adicionaDisciplina_Turma(setimoAnoA);
-		professor.adicionaDisciplina_Turma(setimoAnoB);
+//		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+//		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+//		setimoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+//
+//		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+//		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+//		setimoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+//		
+//		professor.adicionaDisciplina_Turma(setimoAnoA);
+//		professor.adicionaDisciplina_Turma(setimoAnoB);
 		
 		return professor;
 	}
@@ -239,36 +239,36 @@ public class ListaSimuladaTurmas {
 		professor.setLogin("suely");
 		professor.setEscola(escolaJorge);
 
-		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
-		setimoAnoA.setTurma(getTurmaSetimoAnoA());
-		setimoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
-
-		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
-		setimoAnoB.setTurma(getTurmaSetimoAnoB());
-		setimoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
-
-		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
-		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
-		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
-
-		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
-		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
-		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
-
-		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
-		nonoAnoA.setTurma(getTurmaNonoAnoA());
-		nonoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
-		
-		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
-		nonoAnoB.setTurma(getTurmaNonoAnoB());
-		nonoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
-		
-		professor.adicionaDisciplina_Turma(setimoAnoA);
-		professor.adicionaDisciplina_Turma(setimoAnoB);
-		professor.adicionaDisciplina_Turma(oitavoAnoA);
-		professor.adicionaDisciplina_Turma(oitavoAnoB);
-		professor.adicionaDisciplina_Turma(nonoAnoA);
-		professor.adicionaDisciplina_Turma(nonoAnoB);
+//		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+//		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+//		setimoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
+//
+//		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+//		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+//		setimoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
+//
+//		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+//		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+//		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
+//
+//		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+//		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+//		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
+//
+//		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+//		nonoAnoA.setTurma(getTurmaNonoAnoA());
+//		nonoAnoA.getDisciplinas().addAll(Arrays.asList(artes));
+//		
+//		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+//		nonoAnoB.setTurma(getTurmaNonoAnoB());
+//		nonoAnoB.getDisciplinas().addAll(Arrays.asList(artes));
+//		
+//		professor.adicionaDisciplina_Turma(setimoAnoA);
+//		professor.adicionaDisciplina_Turma(setimoAnoB);
+//		professor.adicionaDisciplina_Turma(oitavoAnoA);
+//		professor.adicionaDisciplina_Turma(oitavoAnoB);
+//		professor.adicionaDisciplina_Turma(nonoAnoA);
+//		professor.adicionaDisciplina_Turma(nonoAnoB);
 		
 		return professor;		
 	}
@@ -281,36 +281,36 @@ public class ListaSimuladaTurmas {
 		professor.setLogin("jose");
 		professor.setEscola(escolaJorge);
 
-		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
-		setimoAnoA.setTurma(getTurmaSetimoAnoA());
-		setimoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
-
-		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
-		setimoAnoB.setTurma(getTurmaSetimoAnoB());
-		setimoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
-
-		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
-		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
-		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
-
-		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
-		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
-		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
-
-		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
-		nonoAnoA.setTurma(getTurmaNonoAnoA());
-		nonoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
-		
-		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
-		nonoAnoB.setTurma(getTurmaNonoAnoB());
-		nonoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
-		
-		professor.adicionaDisciplina_Turma(setimoAnoA);
-		professor.adicionaDisciplina_Turma(setimoAnoB);
-		professor.adicionaDisciplina_Turma(oitavoAnoA);
-		professor.adicionaDisciplina_Turma(oitavoAnoB);
-		professor.adicionaDisciplina_Turma(nonoAnoA);
-		professor.adicionaDisciplina_Turma(nonoAnoB);
+//		DisciplinaTurma setimoAnoA = new DisciplinaTurma();
+//		setimoAnoA.setTurma(getTurmaSetimoAnoA());
+//		setimoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
+//
+//		DisciplinaTurma setimoAnoB = new DisciplinaTurma();
+//		setimoAnoB.setTurma(getTurmaSetimoAnoB());
+//		setimoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
+//
+//		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+//		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+//		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
+//
+//		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+//		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+//		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
+//
+//		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+//		nonoAnoA.setTurma(getTurmaNonoAnoA());
+//		nonoAnoA.getDisciplinas().addAll(Arrays.asList(historia));
+//		
+//		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+//		nonoAnoB.setTurma(getTurmaNonoAnoB());
+//		nonoAnoB.getDisciplinas().addAll(Arrays.asList(historia));
+//		
+//		professor.adicionaDisciplina_Turma(setimoAnoA);
+//		professor.adicionaDisciplina_Turma(setimoAnoB);
+//		professor.adicionaDisciplina_Turma(oitavoAnoA);
+//		professor.adicionaDisciplina_Turma(oitavoAnoB);
+//		professor.adicionaDisciplina_Turma(nonoAnoA);
+//		professor.adicionaDisciplina_Turma(nonoAnoB);
 		
 		return professor;
 	}
@@ -491,35 +491,35 @@ public class ListaSimuladaTurmas {
 	public static Professor getProfessoraIvaniaAlmeidaDaSilva() {
 		Professor professor = new Professor();
 		// Disciplinas
-		
+		professor.setId(14);
 		professor.setNome("Profª Ivania Almeida da Silva ");
 		professor.setAcesso("03341093370");
 		professor.setLogin("ivania");
 		professor.setEscola(escolaJorge);
 	
-		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
-		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
-		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
-
-		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
-		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
-		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
-
-		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
-		nonoAnoA.setTurma(getTurmaNonoAnoA());
-		nonoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
-		
-		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
-		nonoAnoB.setTurma(getTurmaNonoAnoB());
-		nonoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
-		
-
-		professor.adicionaDisciplina_Turma(oitavoAnoA);
-		professor.adicionaDisciplina_Turma(oitavoAnoB);
-		professor.adicionaDisciplina_Turma(nonoAnoA);
-		professor.adicionaDisciplina_Turma(nonoAnoB);
-		
-		
+//		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
+//		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
+//		oitavoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+//
+//		DisciplinaTurma oitavoAnoB = new DisciplinaTurma();
+//		oitavoAnoB.setTurma(getTurmaOitavoAnoB());
+//		oitavoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+//
+//		DisciplinaTurma nonoAnoA = new DisciplinaTurma();
+//		nonoAnoA.setTurma(getTurmaNonoAnoA());
+//		nonoAnoA.getDisciplinas().addAll(Arrays.asList(portugues));
+//		
+//		DisciplinaTurma nonoAnoB = new DisciplinaTurma();
+//		nonoAnoB.setTurma(getTurmaNonoAnoB());
+//		nonoAnoB.getDisciplinas().addAll(Arrays.asList(portugues));
+//		
+//
+//		professor.adicionaDisciplina_Turma(oitavoAnoA);
+//		professor.adicionaDisciplina_Turma(oitavoAnoB);
+//		professor.adicionaDisciplina_Turma(nonoAnoA);
+//		professor.adicionaDisciplina_Turma(nonoAnoB);
+//		
+//		
 		return professor;
 		
 	}

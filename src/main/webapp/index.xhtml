@@ -16,40 +16,23 @@
 
 <h:body>
 	<h:form>
-		<div class="container">
-			<div class="row justify-content-md-left" style="margin-top: 10px;">
-				<div class="col-md-auto" style="padding-right: 10px;">
-					<p:card style="width: 25rem; margin-bottom: 2em" styleClass="card">
-						<f:facet name="title">
-        				Disciplinas	
-    						</f:facet>
-
-						<f:facet name="subtitle">
-							<ui:repeat var="disciplina"
-								value="#{inicioBean.professor.disciplinas}">
-								<p>#{disciplina.nomeMateria}</p>
-							</ui:repeat>
-						</f:facet>
-
-					</p:card>
-				</div>
-
-				<div class="col-md-auto">
-					<p:card style="width: 25rem; margin-bottom: 2em" styleClass="card">
-						<f:facet name="title">
-						Turmas
+		<div class="container-fluid row">
+			<h1>Turmas</h1>
+			<ui:repeat var="obj" value="#{inicioBean.disciplinasTurmas}">
+				<p:card style="width: 25rem; margin-bottom: 2em; margin:4px;"
+					styleClass="card col-3">
+					<f:facet name="title">
+						<h5 class="card-title strong">#{obj.turma.descricaoTurma}</h5>
 					</f:facet>
-						<f:facet name="subtitle">
-							<ui:repeat var="turma" value="#{inicioBean.turmas}">
-								<p>#{turma.descricaoTurma} - Quantidade de Alunos:
-									#{turma.quantAlunos}</p>
-							</ui:repeat>
-						</f:facet>
-					</p:card>
-				</div>
-			</div>
-		</div>
 
+					<f:facet name="subtitle">
+						<ui:repeat var="disciplina" value="#{obj.disciplinas}">
+							<h:outputLabel styleClass="p">#{disciplina}</h:outputLabel>
+						</ui:repeat>
+					</f:facet>
+				</p:card>
+			</ui:repeat>
+		</div>
 
 	</h:form>
 </h:body>

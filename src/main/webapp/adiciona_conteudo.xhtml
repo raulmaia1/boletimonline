@@ -27,16 +27,18 @@
   				
 				<h:outputLabel value="Conteudo" styleClass="form-label col-md-6" />
 				<h:inputTextarea value="#{adicionaConteudoBean.conteudo.conteudo}" styleClass="form-control" />
+
+				<p:outputLabel value="Turma" styleClass="form-label col-md-6" />
+				<p:selectOneMenu converter="turmaConverter" value="#{adicionaConteudoBean.turmaSelecionada}" styleClass="form-control">
+    				<f:selectItems value="#{adicionaConteudoBean.turmas}" />
+				</p:selectOneMenu >
+
 				
 				<p:outputLabel value="Disciplina" styleClass="form-label col-md-6" />
-				<p:selectOneMenu  converter="disciplinaConverter" value="#{adicionaConteudoBean.disciplina}" styleClass="form-control">
+				<p:selectOneMenu  converter="disciplinaConverter" value="#{adicionaConteudoBean.disciplinaSelecionada}" styleClass="form-control">
     				<f:selectItems value="#{adicionaConteudoBean.disciplinas}" />
 				</p:selectOneMenu >
 				
-				<p:outputLabel value="Turma" styleClass="form-label col-md-6" />
-				<p:selectOneMenu converter="turmaConverter" value="#{adicionaConteudoBean.turma}" styleClass="form-control">
-    				<f:selectItems value="#{adicionaConteudoBean.turmas}" />
-				</p:selectOneMenu >
 				
 				<p:outputLabel value="Quantidade de Aulas" styleClass="form-label col-md-6" />
 				<p:inputMask value="#{adicionaConteudoBean.conteudo.quantAulas}" styleClass="form-control" />				

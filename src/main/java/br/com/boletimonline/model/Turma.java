@@ -38,8 +38,7 @@ public class Turma {
 			
 	@Override
 	public String toString() {
-		return "Turma [id=" + id + ", descricaoTurma=" + descricaoTurma + ", turno=" + turno + ", ano=" + ano
-				+ ", escola=" + escola + "]";
+		return descricaoTurma;
 	}
 
 	public void setTurno(String turno) {
