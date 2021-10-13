@@ -16,19 +16,20 @@
 	<h:form id="formulario">
 		<div class="container-fluid row">
 			<h:panelGrid columns="4" cellpadding="10" styleClass="row g-2">
+				
 				<p:selectOneMenu placeholder="Turma" converter="turmaConverterConteudo"
-					value="#{adicionaConteudoBean.turma}" styleClass="form-control">
-					<f:selectItems value="#{adicionaConteudoBean.turmas}" />
+					value="#{visualizarConteudoBean.turmaSelecionada}" styleClass="form-control">
+					<f:selectItems value="#{visualizarConteudoBean.turmas}" />
 				</p:selectOneMenu>
-
-				<p:calendar placeholder="Data Inicio" />
-				<p:calendar placeholder="Data Final" />
-				<p:commandButton update="formulario" value="Pesquisar"
-					styleClass="btn btn-primary col" />
-
+				
+				
+				<p:inputMask value="#{visualizarConteudoBean.valorInicial}" mask="99/99/9999" styleClass="form-control"/>
+				<p:inputMask value="#{visualizarConteudoBean.valorFinal}" mask="99/99/9999" styleClass="form-control"/>
+								
+				<p:commandButton process="@form" update="formulario" value="Ok" actionListener="#{visualizarConteudoBean.pesquisaPorData}"/>
 			</h:panelGrid>
 
-			<h:dataTable id="tabela" var="c" value="#{conteudoBean.conteudos}"
+			<h:dataTable id="tabela" var="c" value="#{visualizarConteudoBean.conteudos}"
 				styleClass="table table-responsive table-striped">
 				<h:column>
 					<f:facet name="header">Data</f:facet>
@@ -47,14 +48,19 @@
 				<h:column>
 					<f:facet name="header">Quantidade de Aulas</f:facet>
 					<h:outputLabel  value="#{c.quantAulas}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Turma</f:facet>
+					<h:outputLabel  value="#{c.turma.descricaoTurma}"/>
 				</h:column>	
 				
 			</h:dataTable>
 			<h:panelGrid columns="3" cellpadding="5" styleClass="row g-2">
-				<p:commandButton disabled="true" value="Imprimir"/>
+				<p:commandButton ajax="false" value="Imprimir Ok" actionListener="#{visualizarConteudoBean.imprimir}" onclick="this.form.target='_blank'"/>
 				<h:commandButton disabled="true" value="Salvar Intervalo" styleClass="btn btn-success"/>
 				
-				<h:outputLabel value="Total de Horas/Aula : #{conteudoBean.horasAulas}" styleClass="h4"/>
+				<h:outputLabel value="Total de Horas/Aula : #{visualizarConteudoBean.horasAulas}" styleClass="h4"/>
 			
 			</h:panelGrid>
 

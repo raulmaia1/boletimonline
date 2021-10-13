@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.boletimonline.factory.ConexaoBancoFactory;
-import br.com.boletimonline.listasimulada.ListaSimuladaTurmas;
 import br.com.boletimonline.model.Disciplina;
 import br.com.boletimonline.model.DisciplinaTurma;
 import br.com.boletimonline.model.Turma;
@@ -162,13 +161,4 @@ public class DisciplinaTurmaProfessorDao {
 		return Optional.empty();
 	}
 
-	public static void main(String[] args) {
-	
-		Professor professor = ListaSimuladaTurmas.getProfessoraAnaPaulaBarbosaDeJesus();
-		
-		List<DisciplinaTurma> lista = new DisciplinaTurmaProfessorDao().listarDisciplinaPorProfessor(professor);
-		
-		lista.forEach(System.out::println);
-		
-	}
 }

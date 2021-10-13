@@ -90,5 +90,13 @@ public class ConteudoProgramatico {
 	public Professor getProfessor() {
 		return professor;
 	}
+
+	@Override
+	public String toString() {
+		return "ConteudoProgramatico [id=" + id + ", data=" + data + ", conteudo=" + conteudo + ", quantAulas="
+				+ quantAulas + ", disciplina=" + disciplina + ", turma=" + turma + ", professor=" + professor + "]";
+	}
+	
+	
 	
 }

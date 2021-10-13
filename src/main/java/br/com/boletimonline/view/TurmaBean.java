@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import br.com.boletimonline.model.DisciplinaTurma;
 import br.com.boletimonline.model.Turma;
 import br.com.boletimonline.model.usuario.Professor;
 
@@ -15,19 +16,20 @@ import br.com.boletimonline.model.usuario.Professor;
 public class TurmaBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private Professor professor;
+	private DisciplinaTurma disciplinaTurma;
 
 	@PostConstruct
 	private void init() {
-		this.professor = (Professor) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("professor");
+		this.disciplinaTurma = (DisciplinaTurma) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("disciplinaTurmaSelecionada");
 	}
 		
 	public void abriTurma(Turma turma) {
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("turmaSelecionada", turma);
 	}
 	
-	public Professor getProfessor() {
-		return professor;
+	
+	public DisciplinaTurma getDisciplinaTurma() {
+		return disciplinaTurma;
 	}
 	
 }

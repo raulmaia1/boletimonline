@@ -11,7 +11,7 @@ import br.com.boletimonline.factory.ConexaoBancoFactory;
 import br.com.boletimonline.model.Turma;
 import br.com.boletimonline.model.usuario.Professor;
 
-public class TurmaDao {
+public class TurmaDao implements Pesquisa<Turma> {
 
 	private static final String INSERT_TURMA = "INSERT INTO turma (descricao_turma, turno,ano,id_escola) VALUES (?,?,?,?)";
 	private static final String SQL_BUSCAR_TURMA = "SELECT * FROM turma WHERE descricao_turma LIKE ?";
@@ -102,6 +102,7 @@ public class TurmaDao {
 		return this.pesquisaTurmaPorID(lista);
 	}
 
+
 	private List<Turma> pesquisaTurmaPorID(List<Integer> lista) {
 		List<Turma> turmas = new ArrayList<Turma>();
 		
@@ -136,6 +137,7 @@ public class TurmaDao {
 		return turmas;
 	}
 
+	@Override
 	public Optional<Turma> pesquisaPorID(Integer idTurma) {
 			Optional<Turma> optional = Optional.empty();
 			try {
@@ -157,9 +159,7 @@ public class TurmaDao {
 					
 				rs.close();
 				stmt.close();
-				
-				return optional;
-				
+								
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -167,12 +167,4 @@ public class TurmaDao {
 			return optional;
 		}
 	
-	
-	public static void main(String[] args) {
-
-		new ProfessorDao().loginProfessor("franklin", "53052560387").ifPresent(prof -> {
-			new TurmaDao().listaTurmasPorProfessor(prof).forEach(System.out::println);
-		});
-
-	}
 }

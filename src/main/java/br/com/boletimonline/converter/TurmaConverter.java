@@ -11,7 +11,7 @@ import javax.faces.convert.FacesConverter;
 import br.com.boletimonline.model.Turma;
 import br.com.boletimonline.view.AdicionaConteudoBean;
 
-@FacesConverter(value = "turmaConverter", forClass = AdicionaConteudoBean.class)
+@FacesConverter(value = "turmaConverter")
 public class TurmaConverter implements Converter {
 	private static List<Turma> turmas = new ArrayList<>();
 

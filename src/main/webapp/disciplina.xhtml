@@ -13,18 +13,24 @@
 </h:head>
 <h:body>
 	<h:form>
-		<div class="container-fluid row">
-			<h:outputLabel style="padding-top:10px;" value="Disciplinas: #{disciplinaBean.professor.nomeDisciplinas}" styleClass="h4" />
-			<ui:repeat var="disciplina" value="#{disciplinaBean.professor.disciplinas}">
-			<div class="col-3">			
-				<div class="card" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">#{disciplina.nomeMateria}</h5>
-						<p class="card-text"></p>
-						<h:commandButton actionListener="#{disciplinaBean.abriBimestre(disciplina)}" action="turmas" styleClass="btn btn-primary" value="Adicionar Notas" />
+		<div class="container-fluid row col-12">
+			<h:outputLabel style="padding-top:10px;" value="Disciplinas"
+				styleClass="h4" />
+			<ui:repeat var="dt" value="#{disciplinaBean.disciplinasTurmas}">
+					<div class="col-3">
+						<div class="card" style="width: 18rem;">
+							<div class="card-body">
+								<h5 class="card-title">#{dt.turma.descricaoTurma} - #{dt.turma.turno} - #{dt.turma.ano}</h5>
+								<ui:repeat var="disciplina" value="#{dt.disciplinas}">
+									<p class="card-text">#{disciplina.nomeMateria}</p>
+								</ui:repeat>
+							</div>
+								<h:commandButton
+									actionListener="#{disciplinaBean.abriBimestre(dt)}"
+									action="turmas" styleClass="btn btn-primary"
+									value="Adicionar Notas" />
+						</div>
 					</div>
-				</div>
-			</div>
 			</ui:repeat>
 		</div>
 

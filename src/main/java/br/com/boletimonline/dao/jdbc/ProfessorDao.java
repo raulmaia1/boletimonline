@@ -8,10 +8,11 @@ import java.util.Optional;
 import br.com.boletimonline.factory.ConexaoBancoFactory;
 import br.com.boletimonline.model.usuario.Professor;
 
-public class ProfessorDao {
+public class ProfessorDao implements Pesquisa<Professor>{
 
 	private static final String INSERT_PROFESSOR = "INSERT INTO professor (nome_professor, acesso,login) VALUES (?,?,?)";
 	private static final String SQL_BUSCAR_PROFESSOR = "SELECT * FROM professor WHERE login LIKE ? and acesso LIKE ?";
+	private static final String SQL_BUSCAR_PROFESSOR_POR_ID = "SELECT * FROM professor WHERE id = ?";
 
 	public Integer adiciona(Professor professor) {
 
@@ -76,10 +77,37 @@ public class ProfessorDao {
 		return optional;
 
 	}
-	
-	public Optional<Professor> pesquisaPorID(Integer id) {
 
-		return null;
+	@Override
+	public Optional<Professor> pesquisaPorID(Integer id) {
+		Optional<Professor> optional = Optional.empty();
+		try {
+			PreparedStatement stmt = ConexaoBancoFactory.getConexao().get()
+					.prepareStatement(SQL_BUSCAR_PROFESSOR_POR_ID);
+
+			stmt.setInt(1, id);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				Professor professor = new Professor();
+				
+				professor.setId(rs.getInt("id"));
+				professor.setNome(rs.getString("nome_professor"));
+				professor.setLogin(rs.getString("login"));
+				professor.setAcesso(rs.getString("acesso"));
+				
+				optional = Optional.ofNullable(professor);
+			}
+				
+			rs.close();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return optional;
 	}
 	
 }
