@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import br.com.boletimonline.model.Disciplina;
 import br.com.boletimonline.model.DisciplinaTurma;
 import br.com.boletimonline.model.usuario.Professor;
 
@@ -33,8 +34,14 @@ public class DisciplinaBean implements Serializable {
 		return disciplinasTurmas;
 	}
 		
-	public void abriBimestre(DisciplinaTurma disciplinaTurma) {
+	public void abriBimestre(DisciplinaTurma disciplinaTurma, Disciplina disciplinaSelecionada) {
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("disciplinaSelecionada", disciplinaSelecionada);
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("disciplinaTurmaSelecionada", disciplinaTurma);
+	}
+	
+	public void imprimirNotas(DisciplinaTurma disciplinaTurma, Disciplina disciplinaSelecionada) {
+		
+		
 	}
 	
 }

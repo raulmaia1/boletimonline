@@ -1,17 +1,17 @@
 package br.com.boletimonline.builder;
 
 import br.com.boletimonline.listasimulada.ListaSimuladaTurmas;
-import br.com.boletimonline.model.Aluno;
 import br.com.boletimonline.model.Escola;
 import br.com.boletimonline.model.Turma;
+import br.com.boletimonline.model.usuario.Aluno;
 
 public class AlunoBuilder {
 	
 	private Aluno aluno = new Aluno();
-	public static Escola escola = ListaSimuladaTurmas.escolaJorge;
+//	public static Escola escola = ListaSimuladaTurmas.escolaJorge;
 	
 	public AlunoBuilder addNomeAluno(String nomeAluno) {
-		aluno.setNomeAluno(nomeAluno);
+		aluno.setNome(nomeAluno);
 		return this;
 	}
 	
@@ -21,7 +21,6 @@ public class AlunoBuilder {
 	}
 	
 	public Aluno builder(){
-		aluno.setEscola(escola);
 		return aluno;
 	}
 

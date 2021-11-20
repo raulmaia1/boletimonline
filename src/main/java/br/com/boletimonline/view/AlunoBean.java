@@ -9,10 +9,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import br.com.boletimonline.model.AlunoBoletim;
+import br.com.boletimonline.dao.jdbc.AlunoDao;
+import br.com.boletimonline.dao.jdbc.BimestreDao;
 import br.com.boletimonline.model.Bimestre;
 import br.com.boletimonline.model.Disciplina;
-import br.com.boletimonline.model.Turma;
+import br.com.boletimonline.model.DisciplinaTurma;
 import br.com.boletimonline.model.usuario.Professor;
 
 @ManagedBean
@@ -20,47 +21,55 @@ import br.com.boletimonline.model.usuario.Professor;
 public class AlunoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Turma turma;
-	private Disciplina disciplina;
-	private Professor professor;
-	private Bimestre bimestreSelecionado;
-	private Disciplina disciplinaSelecionada;
-	
+	private List<Bimestre> lista = new ArrayList<>();
+
 	@PostConstruct
 	private void init() {
-		this.disciplina = (Disciplina) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("disciplinaSelecionada");
-		this.turma = (Turma) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("turmaSelecionada");
-		this.professor = (Professor) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("professor");
-		this.bimestreSelecionado = (Bimestre) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("bimestreSelecionado");
-		this.disciplinaSelecionada = (Disciplina) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("disciplinaSelecionada");
-	}
-	
-	public Turma getTurma() {
-		return turma;
-	}
-	
-	public void adicionaNota() {
-				
-		List<AlunoBoletim> lista = new ArrayList<>();
-		this.turma.getAlunos().forEach((aluno) -> {
-			AlunoBoletim alunoBoletim = new AlunoBoletim();
+		Professor professor = (Professor) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+				.get("usuario");
 		
-			alunoBoletim.setAluno(aluno);
-			alunoBoletim.setTurma(turma);
-						
-			alunoBoletim.setDisciplina(this.disciplinaSelecionada);
-			
-			alunoBoletim.setBimestreSelecionado(bimestreSelecionado);
-			
-			lista.add(alunoBoletim);
-		});
+		Integer numeroBimestre = (Integer) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+				.get("numeroBimestre");
 		
-		for (AlunoBoletim alunoBoletim : lista) {
-			System.out.println(alunoBoletim);
+		DisciplinaTurma disciplinaTurma = (DisciplinaTurma) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+				.get("disciplinaTurmaSelecionada");
+
+		Disciplina disciplina = (Disciplina) FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
+				.get("disciplinaSelecionada");
+
+		
+		
+		
+		List<Bimestre> listaResult = new BimestreDao().verificaBimestrePorTurmaENumero(disciplinaTurma.getTurma(),
+				numeroBimestre);
+
+		if (!listaResult.isEmpty()) {
+			this.lista.addAll(listaResult);
+		} else {
+			
+			new AlunoDao().pesquisaAlunosPorTurma(disciplinaTurma.getTurma()).forEach(aluno -> {
+				Bimestre bimestre = new Bimestre();
+				bimestre.setAluno(aluno);
+				bimestre.setProfessor(professor);
+				bimestre.setDisciplina(disciplina);
+				bimestre.setNumeroBimestre(numeroBimestre);
+				bimestre.setTurma(aluno.getTurma());
+				bimestre.setEscola(aluno.getEscola());
+				this.lista.add(bimestre);
+			});
 		}
+	}
+
+	public void adicionaNota() {
+		
+		new BimestreDao().adiciona(lista);
 		
 //		ControllerAluno controllerAluno = new ControllerAluno();
 //		controllerAluno.atualizarNotas(this.bimestre);
 	}
 
+	public List<Bimestre> getLista() {
+		return lista;
+	}
+	
 }

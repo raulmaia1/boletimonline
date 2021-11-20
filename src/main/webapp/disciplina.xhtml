@@ -17,20 +17,25 @@
 			<h:outputLabel style="padding-top:10px;" value="Disciplinas"
 				styleClass="h4" />
 			<ui:repeat var="dt" value="#{disciplinaBean.disciplinasTurmas}">
-					<div class="col-3">
-						<div class="card" style="width: 18rem;">
-							<div class="card-body">
-								<h5 class="card-title">#{dt.turma.descricaoTurma} - #{dt.turma.turno} - #{dt.turma.ano}</h5>
-								<ui:repeat var="disciplina" value="#{dt.disciplinas}">
-									<p class="card-text">#{disciplina.nomeMateria}</p>
-								</ui:repeat>
-							</div>
+				<div class="col-3">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">#{dt.turma.descricaoTurma} -
+								#{dt.turma.turno} - #{dt.turma.ano}</h5>
+							<ui:repeat var="disciplina" value="#{dt.disciplinas}">
+								<p class="card-text">#{disciplina.nomeMateria}</p>
 								<h:commandButton
-									actionListener="#{disciplinaBean.abriBimestre(dt)}"
-									action="turmas" styleClass="btn btn-primary"
+									actionListener="#{disciplinaBean.abriBimestre(dt,disciplina)}"
+									action="bimestre" styleClass="btn btn-primary"
 									value="Adicionar Notas" />
+									<h:commandButton
+									actionListener="#{disciplinaBean.imprimirNotas(dt,disciplina)}"
+									action="bimestre" styleClass="btn btn-primary"
+									value="Imprimir Notas" />
+							</ui:repeat>
 						</div>
 					</div>
+				</div>
 			</ui:repeat>
 		</div>
 

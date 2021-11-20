@@ -15,10 +15,10 @@ public class EscolaBuilder {
 		return this;
 	}
 	
-	public EscolaBuilder addEndereco(String endereco) {
-		escola.setEndereco(endereco);
-		return this;
-	}
+//	public EscolaBuilder addEndereco(String endereco) {
+//		escola.setEndereco(endereco);
+//		return this;
+//	}
 	
 	public Escola build() {
 		return escola;

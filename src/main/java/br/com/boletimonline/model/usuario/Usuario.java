@@ -81,4 +81,8 @@ public abstract class Usuario {
 		this.id = id;
 	}
 	
+	@Override
+	public String toString() {
+		return id.toString() + "  "+ nome;
+	}
 }

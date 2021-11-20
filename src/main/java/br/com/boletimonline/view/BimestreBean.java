@@ -1,46 +1,30 @@
 package br.com.boletimonline.view;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import br.com.boletimonline.model.Bimestre;
-import br.com.boletimonline.model.Disciplina;
-
 @ManagedBean
 @ViewScoped
 public class BimestreBean {
-
-	private Disciplina disciplina;
-
-	@PostConstruct
-	private void init() {
-		this.disciplina = (Disciplina) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("disciplinaSelecionada");
-	}
-//	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-	
+		
 	public void abriPrimeiroBimestre() {
-		alteraBimestre(disciplina.getPrimeiro());
+		alteraBimestre(1);		
 	}
 	
 	public void abriSegundoBimestre() {
-		alteraBimestre(disciplina.getSegundo());
+		alteraBimestre(2);
 	}
 	
 	public void abriTerceiroBimestre() {
-		alteraBimestre(disciplina.getTerceiro());
+		alteraBimestre(3);
 	}
 	
 	public void abriQuartoBimestre() {
-		alteraBimestre(disciplina.getQuarto());		
+		alteraBimestre(4);		
 	}
 
-	private void alteraBimestre(Bimestre bimestre) {
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("bimestre", null);
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("bimestreSelecionado", bimestre);
+	private void alteraBimestre(Integer numeroBimestre) {
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("numeroBimestre", numeroBimestre);
 	}
 }

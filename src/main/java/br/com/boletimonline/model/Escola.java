@@ -4,7 +4,8 @@ public class Escola {
 
 	private Integer id;
 	
-	private String nomeEscola,inep,endereco;
+	private String nomeEscola,inep;
+	private Endereco endereco;
 	
 	public void setInep(String inep) {
 		this.inep = inep;
@@ -14,11 +15,11 @@ public class Escola {
 		return inep;
 	}
 	
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 	
@@ -69,6 +70,5 @@ public class Escola {
 			return false;
 		return true;
 	}
-	
 	
 }

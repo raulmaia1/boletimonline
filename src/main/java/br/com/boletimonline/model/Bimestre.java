@@ -1,58 +1,57 @@
 package br.com.boletimonline.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import br.com.boletimonline.model.usuario.Aluno;
+import br.com.boletimonline.model.usuario.Professor;
 
-@Entity
-@Table(name = "bimestre")
 public class Bimestre {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Integer id, numeroBimestre,quantFaltas = 0;
 	
-	@Column(nullable = false)
-	private Integer numeroBimestre;
+	private Double notaAtividade = 0.0, notaProva = 0.0;
 	
-	@OneToOne(targetEntity = Nota.class, cascade = CascadeType.ALL, optional = true)
-	private Nota notaAtividade, notaProva;
-	@Column(nullable = false)
-	private String quantFaltas = "0";
-	
-	@OneToOne(cascade = CascadeType.ALL, optional = true)
 	private Aluno aluno;
+
+	private Professor professor;
+
+	private Turma turma;
+
+	private Disciplina disciplina;
+
+	private Escola escola;
+	
+	public Escola getEscola() {
+		return escola;
+	} 
+	
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
 	
 	public Integer getNumeroBimestre() {
 		return numeroBimestre;
 	}
 	
-	public Nota getNotaAtividade() {
+	public Double getNotaAtividade() {
 		return notaAtividade;
 	}
 	
-	public Nota getNotaProva() {
+	public Double getNotaProva() {
 		return notaProva;
 	}
-	
-	public String getQuantFaltas() {
+		
+	public Integer getQuantFaltas() {
 		return quantFaltas;
 	}
 	
-	public void setNotaAtividade(Nota notaAtividade) {
+	public void setNotaAtividade(Double notaAtividade) {
 		this.notaAtividade = notaAtividade;
 	}
 	
-	public void setNotaProva(Nota notaProva) {
+	public void setNotaProva(Double notaProva) {
 		this.notaProva = notaProva;
 	}
 	
-	public void setQuantFaltas(String quantFaltas) {
+	public void setQuantFaltas(Integer quantFaltas) {
 		this.quantFaltas = quantFaltas;
 	}
 	
@@ -60,12 +59,11 @@ public class Bimestre {
 		this.numeroBimestre = numeroBimestre;
 	}
 	
-	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 	
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
@@ -76,4 +74,29 @@ public class Bimestre {
 	public Aluno getAluno() {
 		return aluno;
 	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+	
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+	
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public void setEscola(Escola escola) {
+		this.escola = escola;
+	}
+	
 }

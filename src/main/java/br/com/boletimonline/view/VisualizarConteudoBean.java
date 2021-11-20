@@ -14,7 +14,7 @@ import br.com.boletimonline.dao.jdbc.ConteudoProgramaticoDao;
 import br.com.boletimonline.model.ConteudoProgramatico;
 import br.com.boletimonline.model.Turma;
 import br.com.boletimonline.model.usuario.Professor;
-import br.com.boletimonline.relatorio.GeraRelatorio;
+import br.com.boletimonline.relatorio.GeraRelatorioConteudoProgramatico;
 
 @ManagedBean
 @ViewScoped
@@ -47,8 +47,7 @@ public class VisualizarConteudoBean implements Serializable{
 	}
 
 	public void imprimir() {
-		new GeraRelatorio().gera(conteudos, getHorasAulas());
-		System.out.println("Ok");
+		new GeraRelatorioConteudoProgramatico().gera(conteudos, getHorasAulas());
 	}
 	
 	public Turma getTurmaSelecionada() {

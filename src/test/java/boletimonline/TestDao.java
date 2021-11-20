@@ -17,7 +17,7 @@ public class TestDao {
 //		 new DisciplinaTurmaProfessorDao().adiciona(professora);
 //		  cadastrar os alunos
 	
-		 new AlunoDao().adicionaAlunos(ListaSimuladaTurmas.getAlunosSetimoAnoA());
+		 new AlunoDao().adicionaAlunos(ListaSimuladaTurmas.getAlunosNonoAno());
 		 
 		 
 //		 System.out.println(new TurmaDao().pesquisaTurma(ListaSimuladaTurmas.getTurmaNonoAnoA()));

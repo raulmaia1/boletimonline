@@ -5,12 +5,10 @@ import java.util.List;
 
 import br.com.boletimonline.builder.AlunoBuilder;
 import br.com.boletimonline.builder.DisciplinaBuilder;
-import br.com.boletimonline.builder.EscolaBuilder;
-import br.com.boletimonline.model.Aluno;
 import br.com.boletimonline.model.Disciplina;
 import br.com.boletimonline.model.DisciplinaTurma;
-import br.com.boletimonline.model.Escola;
 import br.com.boletimonline.model.Turma;
+import br.com.boletimonline.model.usuario.Aluno;
 import br.com.boletimonline.model.usuario.Professor;
 
 public class ListaSimuladaTurmas {
@@ -25,7 +23,7 @@ public class ListaSimuladaTurmas {
 	private static Disciplina filosofia = new DisciplinaBuilder().addNomeMateria("Filosofia").builder();
 	private static Disciplina informatica = new DisciplinaBuilder().addNomeMateria("Informática").builder();
 	private static Disciplina ensino_religioso = new DisciplinaBuilder().addNomeMateria("Ensino Religioso").builder();
-	public static Escola escolaJorge = new EscolaBuilder().addID(1).addEndereco("PRAÇA CAPITÃO JOSÉ ANTONIO, 03  - TRIZIDELA - BACABAL – MARANHÃO").addInep("21278911").addNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA").build();
+	//public static Escola escolaJorge = new EscolaBuilder().addID(1).addEndereco("PRAÇA CAPITÃO JOSÉ ANTONIO, 03  - TRIZIDELA - BACABAL – MARANHÃO").addInep("21278911").addNomeEscola("U. E. F. PREFEITO JORGE JOSE DE MENDONÇA").build();
 	
 	
 	public static Professor getProfessoraFernanda() {
@@ -34,7 +32,7 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Fernanda Carolina Ferreira Mendonça");
 		professor.setAcesso("06094427327");
 		professor.setLogin("fernanda");
-		professor.setEscola(escolaJorge);
+		//professor.setEscola(escolaJorge);
 		
 		DisciplinaTurma disciplina_turma = new DisciplinaTurma();
 		
@@ -495,7 +493,7 @@ public class ListaSimuladaTurmas {
 		professor.setNome("Profª Ivania Almeida da Silva ");
 		professor.setAcesso("03341093370");
 		professor.setLogin("ivania");
-		professor.setEscola(escolaJorge);
+		//professor.setEscola(escolaJorge);
 	
 //		DisciplinaTurma oitavoAnoA = new DisciplinaTurma();
 //		oitavoAnoA.setTurma(getTurmaOitavoAnoA());
@@ -807,6 +805,7 @@ public class ListaSimuladaTurmas {
 	public static Turma getTurmaSetimoAnoA() {
 
 		Turma turma = new Turma();
+		turma.setId(8);
 		turma.setDescricaoTurma("Setimo Ano A");
 		turma.setTurno("MATUTINO");
 
@@ -856,6 +855,7 @@ public class ListaSimuladaTurmas {
 	 */
 	public static Turma getTurmaSetimoAnoB() {
 		Turma turma = new Turma();
+		turma.setId(9);
 		turma.setDescricaoTurma("Setimo Ano B");
 		turma.setTurno("MATUTINO");
 		return turma;
@@ -902,7 +902,7 @@ public class ListaSimuladaTurmas {
 	/*
 	 * Oitavo Ano A
 	 */
-	private static Turma getTurmaOitavoAnoA() {
+	public static Turma getTurmaOitavoAnoA() {
 
 		Turma turma = new Turma();
 		turma.setDescricaoTurma("Oitavo Ano A");
@@ -1015,6 +1015,7 @@ public class ListaSimuladaTurmas {
 	 */
 	public static Turma getTurmaNonoAnoA() {
 		Turma turma = new Turma();
+		turma.setId(12);
 		turma.setDescricaoTurma("Nono Ano A");
 		turma.setTurno("VESPERTINO");
 		return turma;

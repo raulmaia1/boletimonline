@@ -15,25 +15,31 @@
 <h:body>
 	<h:form>
 		<div class="container-fluid">
-			<p:dataTable var="aluno" value="#{alunoBean.turma.alunos}"
+			<br></br>
+			<p:dataTable var="bimestre" value="#{alunoBean.lista}"
 				reflow="true" styleClass="products-table">
 
-				<p:column headerText="Numero" sortBy="#{aluno.numero}">
-					<h:outputLabel value="#{aluno.numero}" />
+				<p:column headerText="Numero" sortBy="#{bimestre.aluno.numero}">
+					<h:outputLabel value="#{bimestre.aluno.numero}" />
 				</p:column>
 
 				<p:column headerText="Nome Aluno">
-					<h:outputLabel value="#{aluno.nomeAluno}" />
+					<h:outputLabel value="#{bimestre.aluno.nome}" />
 				</p:column>
 				
-				<p:column headerText="Atividade">
-					<h:inputText value="#{aluno.notaAtividade.valor}" styleClass="form-control"/>
+				<p:column headerText="Nota Atividade">
+					<h:inputText value="#{bimestre.notaAtividade}" />
 				</p:column>
 				
 				<p:column headerText="Nota Prova">
-					<h:inputText value="#{aluno.notaProva.valor}" styleClass="form-control"/>
+					<p:inputNumber value="#{bimestre.notaProva}" />
 				</p:column>
 				
+				<p:column headerText="Qtde Faltas">
+					<p:inputNumber mask="999" value="#{bimestre.quantFaltas}" />
+				</p:column>
+				
+								
 			</p:dataTable>
 			<h:panelGrid columns="2" cellspacing="2">
 				<p:commandButton actionListener="#{alunoBean.adicionaNota}"  style="margin-top:10px;" icon="pi pi-fw pi-save" value="Salvar" styleClass="btn btn-success" />
